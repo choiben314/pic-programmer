@@ -56,7 +56,7 @@ void read_device_status(void) {
 
     do {
         statusVal = xfer_data(MCHP_STATUS);
-    } while((!bit_isset(statusVal, CFGRDY)) && bit_isset(statusVal, FCBUSY));
+    } while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY));
 
     printk("Checked device status! Status: %b\n", statusVal);
 }
