@@ -3,6 +3,7 @@
 #define HI_TIME 50
 #define LO_TIME 50
 
+#define TCK_DELAY 1 // delay time in us 
 #define MCLR 26 // pin 1 on PIC
 #define TDI 5 // pin 16 on PIC
 #define TCK 6 // pin 17 on PIC

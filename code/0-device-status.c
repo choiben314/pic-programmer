@@ -1,5 +1,5 @@
 #include "rpi.h"
-#include "icsp.h"
+#include "jtag.h"
 
 void notmain(void) {
 
