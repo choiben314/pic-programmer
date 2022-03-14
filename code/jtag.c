@@ -22,19 +22,48 @@
     // delay 10ms
     // read Xfer data again
 // Done.
+static void clock_in(void);
 
 void set_mode(uint8_t mode){
     gpio_set_off(TDI); // TDI set to 0
+    gpio_set_off(TCK); // set clock off initially
     for(uint8_t i=0; i < 6; i++){
-        gpio_set_on(TCK);
         // set TMS to i-th bit of mode
-        if(mode >> i & 0b1){
-            gpio_set_on(TMS);
-        }else{
-            gpio_set_off(TMS);
-        }
-        delay_us(TCK_DELAY);
-        gpio_set_off(TCK);
-        delay_us(TCK_DELAY);
+        gpio_write(TMS, mode >> i & 1);
+        clock_in();
     }
+}
+
+void send_command(uint8_t cmd){
+    gpio_set_off(TCK);
+    // send TMS header = 1100 to select shift IR state
+    for(uint8_t i=0; i < 4; i++){
+        // set first two bits to 1 and last two to 0
+        gpio_write(TMS, i < 2 ? 1: 0);
+        clock_in();
+    }
+
+    // clock in the 5-bit command
+    gpio_set_off(TMS); // hold TMS low
+    for(uint8_t i=0; i < 5; i++){
+        if(i == 4){
+            gpio_set_on(TMS); // set TMS high for MSB
+        }
+        gpio_write(TDI, cmd >> i & 1);
+        clock_in();
+    }
+
+    // send TMS footer = 10
+    gpio_set_on(TMS);
+    clock_in();
+    gpio_set_off(TMS);
+    clock_in();
+
+}
+
+static void clock_in(void){
+    gpio_set_on(TCK);
+    delay_us(TCK_DELAY);
+    gpio_set_off(TCK);
+    delay_us(TCK_DELAY);
 }
