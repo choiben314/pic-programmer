@@ -7,8 +7,6 @@
 #define TDO 13 // pin 18 on PIC
 #define TMS 19 // pin 22 on PIC
 
-void enter_programming_mode(void);
-
 void read_device_status(void);
 
 void set_mode(uint8_t mode);
