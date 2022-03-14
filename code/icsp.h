@@ -1,5 +1,14 @@
 #include "rpi.h"
 
+#define HI_TIME 50
+#define LO_TIME 50
+
+#define MCLR 26 // pin 1 on PIC
+#define TDI 5 // pin 16 on PIC
+#define TCK 6 // pin 17 on PIC
+#define TDO 13 // pin 18 on PIC
+#define TMS 19 // pin 22 on PIC
+
 #define KEY_SEQ 0b01001101010000110100100001010000
 
 void configure_io(void);

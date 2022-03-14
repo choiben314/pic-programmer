@@ -2,13 +2,13 @@
 
 
 void configure_io(void) {
-    gpio_set_output(PIN_MCLR);
-    gpio_set_output(PIN_TCK);
-    gpio_set_output(PIN_TDI);
-    gpio_set_input(PIN_TDO);
-    gpio_set_off(PIN_MCLR);
-    gpio_set_off(PIN_TCK);
-    gpio_set_off(PIN_TDI);
+    gpio_set_output(MCLR);
+    gpio_set_output(TCK);
+    gpio_set_output(TDI);
+    gpio_set_input(TDO);
+    gpio_set_off(MCLR);
+    gpio_set_off(TCK);
+    gpio_set_off(TDI);
 }
 
 // Enter enhanced ICSP
