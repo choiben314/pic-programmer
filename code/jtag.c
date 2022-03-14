@@ -68,8 +68,8 @@ void set_mode(uint8_t mode){
 }
 
 void send_command(uint8_t cmd){
-    // send TMS header = 1100 to select shift IR state
-    send_nbits(TMS, 0b1100, 4);
+    // send TMS header = 1, 1, 0, 0 to select shift IR state
+    send_nbits(TMS, 0b0011, 4);
 
     // clock in the 5-bit command
     gpio_set_off(TMS); // hold TMS low
@@ -81,14 +81,14 @@ void send_command(uint8_t cmd){
         clock_in();
     }
 
-    // send TMS footer = 10
-    send_nbits(TMS, 0b10, 2);
+    // send TMS footer = 1, 0
+    send_nbits(TMS, 0b01, 2);
 }
 
 uint32_t xfer_data(uint32_t data) {
-    // TMS Header 0b100
+    // TMS Header 1, 0, 0
     gpio_set_off(TCK);
-    send_nbits(TMS, 0b100, 3);
+    send_nbits(TMS, 0b001, 3);
 
     uint32_t in_data = 0;
 
@@ -104,8 +104,8 @@ uint32_t xfer_data(uint32_t data) {
     in_data |= (gpio_read(TDO) << (XFER_WIDTH - 1));
     clock_in();
 
-    // TMS Footer 0b10
-    send_nbits(TMS, 0b10, 2);
+    // TMS Footer 1, 0
+    send_nbits(TMS, 0b01, 2);
 
     return in_data;
 }
