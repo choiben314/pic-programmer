@@ -1,0 +1,426 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABORT_MODE	include/rpi-constants.h	37;"	d
+AR	defs.mk	/^AR = $(ARM)-ar$/;"	m
+ARM	defs.mk	/^ARM = arm-none-eabi$/;"	m
+AS	defs.mk	/^AS  = $(ARM)-as$/;"	m
+ASFLAGS	defs.mk	/^ASFLAGS = --warn --fatal-warnings  -mcpu=arm1176jzf-s -march=armv6zk $(INC)$/;"	m
+AUXENB	src/uart.c	17;"	d	file:
+AUX_MU_BAUD	src/uart.c	25;"	d	file:
+AUX_MU_CNTL_REG	src/uart.c	23;"	d	file:
+AUX_MU_IER_REG	src/uart.c	19;"	d	file:
+AUX_MU_IIR_REG	src/uart.c	20;"	d	file:
+AUX_MU_IO_REG	src/uart.c	18;"	d	file:
+AUX_MU_LCR_REG	src/uart.c	21;"	d	file:
+AUX_MU_LSR_REG	src/uart.c	22;"	d	file:
+AUX_MU_STAT_REG	src/uart.c	24;"	d	file:
+AssertNow	libc/assert.h	62;"	d
+BUILD_DIR	manifest.mk	/^BUILD_DIR := .\/objs$/;"	m
+CC	defs.mk	/^CC = $(ARM)-gcc$/;"	m
+CLEAR_FIFOs	include/uart.h	14;"	d
+CLEAR_RX_FIFO	include/uart.h	13;"	d
+CLEAR_TX_FIFO	include/uart.h	12;"	d
+CLR	include/rpi-asm.h	22;"	d
+CPP_ASFLAGS	defs.mk	/^CPP_ASFLAGS =  -nostdlib -nostartfiles -ffreestanding   -Wa,--warn -Wa,--fatal-warnings -Wa,-mcpu=arm1176jzf-s -Wa,-march=armv6zk   $(INC)$/;"	m
+CQ_N	libc/circular.h	41;"	d
+CS140E_2022_LIBPI_PATH	defs.mk	/^CS140E_2022_LIBPI_PATH = $(CS140E_2022_PATH)\/libpi$/;"	m
+CYC_PER_USEC	include/rpi-constants.h	29;"	d
+DEV_VAL32	include/rpi.h	/^static inline uint32_t DEV_VAL32(uint32_t x) { return x; }$/;"	f
+Disable_Basic_IRQs	include/rpi-interrupts.h	/^    Disable_Basic_IRQs  = IRQ_Base+0x24,    \/\/ 0x224$/;"	e	enum:__anon5
+Disable_IRQs_1	include/rpi-interrupts.h	/^    Disable_IRQs_1      = IRQ_Base+0x1c,    \/\/ 0x21c$/;"	e	enum:__anon5
+Disable_IRQs_2	include/rpi-interrupts.h	/^    Disable_IRQs_2      = IRQ_Base+0x20,    \/\/ 0x220$/;"	e	enum:__anon5
+Enable_Basic_IRQs	include/rpi-interrupts.h	/^    Enable_Basic_IRQs   = IRQ_Base+0x18,    \/\/ 0x218$/;"	e	enum:__anon5
+Enable_IRQs_1	include/rpi-interrupts.h	/^    Enable_IRQs_1       = IRQ_Base+0x10,    \/\/ 0x210$/;"	e	enum:__anon5
+Enable_IRQs_2	include/rpi-interrupts.h	/^    Enable_IRQs_2       = IRQ_Base+0x14,    \/\/ 0x214$/;"	e	enum:__anon5
+FIQ_MODE	include/rpi-constants.h	34;"	d
+FIQ_control	include/rpi-interrupts.h	/^    FIQ_control         = IRQ_Base+0xc,     \/\/ 0x20c$/;"	e	enum:__anon5
+FREE_MB	include/rpi-constants.h	19;"	d
+GET32	staff-src/put-get.S	/^GET32:$/;"	l
+GET32	staff-start.S	/^GET32:$/;"	l
+GETPC	staff-src/put-get.S	/^GETPC:$/;"	l
+GPIO_BASE	src/gpio.c	13;"	d	file:
+GPIO_FUNC_ALT0	include/gpio.h	/^    GPIO_FUNC_ALT0    = 4,$/;"	e	enum:__anon2
+GPIO_FUNC_ALT1	include/gpio.h	/^    GPIO_FUNC_ALT1    = 5,$/;"	e	enum:__anon2
+GPIO_FUNC_ALT2	include/gpio.h	/^    GPIO_FUNC_ALT2    = 6,$/;"	e	enum:__anon2
+GPIO_FUNC_ALT3	include/gpio.h	/^    GPIO_FUNC_ALT3    = 7,$/;"	e	enum:__anon2
+GPIO_FUNC_ALT4	include/gpio.h	/^    GPIO_FUNC_ALT4    = 3,$/;"	e	enum:__anon2
+GPIO_FUNC_ALT5	include/gpio.h	/^    GPIO_FUNC_ALT5    = 2,$/;"	e	enum:__anon2
+GPIO_FUNC_INPUT	include/gpio.h	/^    GPIO_FUNC_INPUT   = 0,$/;"	e	enum:__anon2
+GPIO_FUNC_OUTPUT	include/gpio.h	/^    GPIO_FUNC_OUTPUT  = 1,$/;"	e	enum:__anon2
+GPIO_INT0	include/gpio.h	/^enum { GPIO_INT0 = 49, GPIO_INT1, GPIO_INT2, GPIO_INT3 };$/;"	e	enum:__anon3
+GPIO_INT1	include/gpio.h	/^enum { GPIO_INT0 = 49, GPIO_INT1, GPIO_INT2, GPIO_INT3 };$/;"	e	enum:__anon3
+GPIO_INT2	include/gpio.h	/^enum { GPIO_INT0 = 49, GPIO_INT1, GPIO_INT2, GPIO_INT3 };$/;"	e	enum:__anon3
+GPIO_INT3	include/gpio.h	/^enum { GPIO_INT0 = 49, GPIO_INT1, GPIO_INT2, GPIO_INT3 };$/;"	e	enum:__anon3
+GPIO_READ_RAW	include/cycle-util.h	/^    static inline unsigned GPIO_READ_RAW(unsigned pin) {$/;"	f
+GPIO_RX	include/gpio.h	9;"	d
+GPIO_TX	include/gpio.h	8;"	d
+GREP_STR	manifest.mk	/^GREP_STR := 'HASH:\\|ERROR:\\|PANIC:\\|PASS:\\|TEST:'$/;"	m
+GREP_STR	tests/Makefile	/^GREP_STR := 'TRACE:\\|ERROR:\\|PANIC:\\|PASS:\\|TEST:'$/;"	m
+HIGHEST_USED_ADDR	include/rpi-constants.h	23;"	d
+IIR_RESET	include/uart.h	16;"	d
+INC	defs.mk	/^INC ?= -I$(LPP)\/include -I$(LPP)\/ -I$(LPP)\/src -I.$/;"	m
+INT_STACK_ADDR	include/rpi-constants.h	16;"	d
+INT_UNHANDLED	include/rpi-interrupts.h	96;"	d
+IRQ_Base	include/rpi-interrupts.h	/^    IRQ_Base            = 0x2000b200,$/;"	e	enum:__anon5
+IRQ_MODE	include/rpi-constants.h	35;"	d
+IRQ_basic_pending	include/rpi-interrupts.h	/^    IRQ_basic_pending   = IRQ_Base+0,       \/\/ 0x200$/;"	e	enum:__anon5
+IRQ_pending_1	include/rpi-interrupts.h	/^    IRQ_pending_1       = IRQ_Base+4,       \/\/ 0x204$/;"	e	enum:__anon5
+IRQ_pending_2	include/rpi-interrupts.h	/^    IRQ_pending_2       = IRQ_Base+8,       \/\/ 0x208$/;"	e	enum:__anon5
+LD	defs.mk	/^LD  = $(ARM)-ld$/;"	m
+LIB	manifest.mk	/^LIB := libpi.a$/;"	m
+LPI	defs.mk	/^LPI = $(LPP)\/libpi.a$/;"	m
+LPP	defs.mk	/^LPP = $(CS140E_2022_LIBPI_PATH)$/;"	m
+MEMMAP	defs.mk	/^MEMMAP ?= $(LPP)\/memmap$/;"	m
+MK_CP15_FUNC	include/rpi-asm.h	13;"	d
+MK_FN	include/rpi-asm.h	7;"	d
+MK_FN	include/rpi-constants.h	25;"	d
+MK_STR	include/asm-helpers.h	12;"	d
+OCP	defs.mk	/^OCP = $(ARM)-objcopy$/;"	m
+OD	defs.mk	/^OD  = $(ARM)-objdump$/;"	m
+OPT_LEVEL	defs.mk	/^OPT_LEVEL ?= -Og$/;"	m
+PI_MHz	include/rpi-constants.h	30;"	d
+PUT16	staff-src/put-get.S	/^PUT16:$/;"	l
+PUT32	staff-start.S	/^PUT32:$/;"	l
+PUT32_T	libc/helper-macros.h	128;"	d
+PUT8	staff-src/put-get.S	/^PUT8:$/;"	l
+Q	libc/Q.h	/^typedef struct Q {$/;"	s
+Q_append	libc/Q.h	/^static void Q_append(Q_t *q, E *e) {$/;"	f
+Q_empty	libc/Q.h	/^static int Q_empty(Q_t *q)  { $/;"	f
+Q_init	libc/Q.h	/^static void Q_init(Q_t *q) {$/;"	f
+Q_insert_after	libc/Q.h	/^static void Q_insert_after(Q_t *q, E *e, E *e_new) {$/;"	f
+Q_nelem	libc/Q.h	/^static unsigned Q_nelem(Q_t *q) { return q->cnt; }$/;"	f
+Q_next	libc/Q.h	/^static E *Q_next(E *e)      { return e->next; }$/;"	f
+Q_pop	libc/Q.h	/^static E *Q_pop(Q_t *q) {$/;"	f
+Q_push	libc/Q.h	/^static void Q_push(Q_t *q, E *e) {$/;"	f
+Q_start	libc/Q.h	/^static E *Q_start(Q_t *q)   { return q->head; }$/;"	f
+Q_t	libc/Q.h	/^} Q_t;$/;"	t	typeref:struct:Q
+RPI_ARMTIMER_CTRL_32BIT	include/rpi-armtimer.h	13;"	d
+RPI_ARMTIMER_CTRL_DISABLE	include/rpi-armtimer.h	25;"	d
+RPI_ARMTIMER_CTRL_ENABLE	include/rpi-armtimer.h	24;"	d
+RPI_ARMTIMER_CTRL_INT_DISABLE	include/rpi-armtimer.h	21;"	d
+RPI_ARMTIMER_CTRL_INT_ENABLE	include/rpi-armtimer.h	20;"	d
+RPI_ARMTIMER_CTRL_PRESCALE_1	include/rpi-armtimer.h	15;"	d
+RPI_ARMTIMER_CTRL_PRESCALE_16	include/rpi-armtimer.h	16;"	d
+RPI_ARMTIMER_CTRL_PRESCALE_256	include/rpi-armtimer.h	17;"	d
+RPI_BASIC_ACCESS_ERROR_0_IRQ	include/rpi-interrupts.h	17;"	d
+RPI_BASIC_ACCESS_ERROR_1_IRQ	include/rpi-interrupts.h	16;"	d
+RPI_BASIC_ARM_DOORBELL_0_IRQ	include/rpi-interrupts.h	12;"	d
+RPI_BASIC_ARM_DOORBELL_1_IRQ	include/rpi-interrupts.h	13;"	d
+RPI_BASIC_ARM_MAILBOX_IRQ	include/rpi-interrupts.h	11;"	d
+RPI_BASIC_ARM_TIMER_IRQ	include/rpi-interrupts.h	10;"	d
+RPI_BASIC_ARM_TIMER_IRQ	include/rpi-interrupts.h	35;"	d
+RPI_BASIC_GPU_0_HALTED_IRQ	include/rpi-interrupts.h	14;"	d
+RPI_BASIC_GPU_1_HALTED_IRQ	include/rpi-interrupts.h	15;"	d
+RPI_COMPILED	include/rpi.h	9;"	d
+RPI_REBOOT_FLUSH_TX	include/rpi-config.h	8;"	d
+RPI_UART_BAUD	include/rpi-config.h	11;"	d
+RUN	manifest.mk	/^RUN = 1$/;"	m
+RUN	tests/Makefile	/^RUN = 1$/;"	m
+RUN_ONE_TIME	libc/assert.h	72;"	d
+RX_ENABLE	include/uart.h	25;"	d
+SPI_CE0	include/spi.h	11;"	d
+SPI_CE1	include/spi.h	12;"	d
+SRC	Makefile	/^SRC :=  $(SRC)                              \\$/;"	m
+SRC	Makefile	/^SRC := .\/src\/gpio.c$/;"	m
+STACK_ADDR	include/rpi-constants.h	12;"	d
+STACK_ADDR2	include/rpi-constants.h	13;"	d
+STAFF_OBJS	Makefile	/^STAFF_OBJS  :=  .\/staff-objs\/uart.o \\$/;"	m
+START	defs.mk	/^START ?= $(LPP)\/staff-start.o$/;"	m
+START	manifest.mk	/^START := .\/staff-start.o$/;"	m
+SUPER_MODE	include/rpi-constants.h	36;"	d
+SYS_MODE	include/rpi-constants.h	39;"	d
+TEST_SRC	tests/Makefile	/^TEST_SRC := hello.c$/;"	m
+TIME_CYC	include/cycle-count.h	27;"	d
+TIME_CYC_10	include/cycle-count.h	34;"	d
+TIME_CYC_PRINT	include/cycle-count.h	42;"	d
+TIME_CYC_PRINT10	include/cycle-count.h	47;"	d
+TTYUSB	manifest.mk	/^TTYUSB = $/;"	m
+TTYUSB	tests/Makefile	/^TTYUSB = $/;"	m
+TX_ENABLE	include/uart.h	26;"	d
+T_to_u32	libc/helper-macros.h	83;"	d
+T_to_u8	libc/helper-macros.h	102;"	d
+UNDEF_MODE	include/rpi-constants.h	38;"	d
+USER_MODE	include/rpi-constants.h	33;"	d
+_XSTRING	libc/assert.h	38;"	d
+__ASM_HELPERS_H__	include/asm-helpers.h	2;"	d
+__CQ_H__	libc/circular.h	2;"	d
+__CYCLE_UTIL_H__	include/cycle-util.h	3;"	d
+__FAST_HASH32_H__	libc/fast-hash32.h	2;"	d
+__GPIO_H__	include/gpio.h	5;"	d
+__HC_SR04_H__	include/hc-sr04.h	2;"	d
+__LIBC_EXTRA_H__	libc/libc-extra.h	2;"	d
+__MATH_HELPERS_H__	libc/math-helpers.h	2;"	d
+__PI_BITSUPPORT_H__	libc/bit-support.h	2;"	d
+__Q_H__	libc/Q.h	3;"	d
+__RPI_ARMTIMER_H__	include/rpi-armtimer.h	2;"	d
+__RPI_ASM_H__	include/rpi-asm.h	2;"	d
+__RPI_ASSERT_H__	libc/assert.h	3;"	d
+__RPI_CONFIG_H__	include/rpi-config.h	2;"	d
+__RPI_CONSTANTS__	include/rpi-constants.h	2;"	d
+__RPI_H__	include/rpi.h	7;"	d
+__RPI_INTERNAL_H__	include/rpi-internal.h	2;"	d
+__RPI_INTERRUPT_H__	include/rpi-interrupts.h	2;"	d
+__RPI_MACROS_H__	libc/helper-macros.h	3;"	d
+__SPI_H__	include/spi.h	2;"	d
+__SW_UART_H__	include/sw-uart.h	4;"	d
+__UART_H__	include/uart.h	2;"	d
+__emit_float	libc/va-printk.c	/^char * __emit_float(char *num, double d, unsigned width) {$/;"	f
+_cstart	staff-src/cstart.c	/^void _cstart() {$/;"	f
+_start	staff-start.S	/^_start:$/;"	l
+abs_diff_u	libc/math-helpers.h	/^static uint32_t  abs_diff_u(uint32_t  x, uint32_t  y) {$/;"	f
+aligned	libc/helper-macros.h	67;"	d
+aligned	libc/memcpy.c	3;"	d	file:
+aligned4	libc/helper-macros.h	68;"	d
+aligned4	libc/memcpy.c	4;"	d	file:
+arm_timer_Base	include/rpi-armtimer.h	/^    arm_timer_Base = 0x2000B400,$/;"	e	enum:__anon8
+arm_timer_Control	include/rpi-armtimer.h	/^    arm_timer_Control = arm_timer_Base + 8,$/;"	e	enum:__anon8
+arm_timer_FreeRunningCounter	include/rpi-armtimer.h	/^    arm_timer_FreeRunningCounter = arm_timer_Base + 32$/;"	e	enum:__anon8
+arm_timer_IRQClear	include/rpi-armtimer.h	/^    arm_timer_IRQClear = arm_timer_Base + 12,$/;"	e	enum:__anon8
+arm_timer_Load	include/rpi-armtimer.h	/^    arm_timer_Load = arm_timer_Base + 0,$/;"	e	enum:__anon8
+arm_timer_MaskedIRQ	include/rpi-armtimer.h	/^    arm_timer_MaskedIRQ = arm_timer_Base + 20,$/;"	e	enum:__anon8
+arm_timer_PreDivider	include/rpi-armtimer.h	/^    arm_timer_PreDivider = arm_timer_Base + 28,$/;"	e	enum:__anon8
+arm_timer_RAWIRQ	include/rpi-armtimer.h	/^    arm_timer_RAWIRQ = arm_timer_Base + 16,$/;"	e	enum:__anon8
+arm_timer_Reload	include/rpi-armtimer.h	/^    arm_timer_Reload = arm_timer_Base + 24,$/;"	e	enum:__anon8
+arm_timer_Value	include/rpi-armtimer.h	/^    arm_timer_Value = arm_timer_Base + 4,$/;"	e	enum:__anon8
+asm_align	include/rpi.h	242;"	d
+asm_not_reached	staff-src/asm-helpers.c	/^void asm_not_reached(uint32_t pc) {$/;"	f
+asm_unimplemented	staff-src/asm-helpers.c	/^void asm_unimplemented(uint32_t pc) {$/;"	f
+assert	libc/assert.h	35;"	d
+assign32_T	libc/helper-macros.h	134;"	d
+at_user_level	staff-src/reboot.c	/^int at_user_level(void) {$/;"	f
+aux_periphs	include/uart.h	/^struct aux_periphs {$/;"	s
+baud	include/sw-uart.h	/^    uint32_t baud;$/;"	m	struct:__anon4
+baud	include/uart.h	/^        baud;$/;"	m	struct:aux_periphs
+bit	libc/rpi-rand.c	/^static unsigned bit;$/;"	v	file:
+bit_clr	libc/bit-support.h	/^bit_clr(uint32_t x, unsigned bit) {$/;"	f
+bit_count	libc/bit-support.h	/^bit_count(uint32_t x) {$/;"	f
+bit_get	libc/bit-support.h	26;"	d
+bit_is_off	libc/bit-support.h	/^bit_is_off(uint32_t x, unsigned bit) {$/;"	f
+bit_is_on	libc/bit-support.h	/^bit_is_on(uint32_t x, unsigned bit) {$/;"	f
+bit_isset	libc/bit-support.h	25;"	d
+bit_not	libc/bit-support.h	/^bit_not(uint32_t x, unsigned bit) {$/;"	f
+bit_set	libc/bit-support.h	/^bit_set(uint32_t x, unsigned bit) {$/;"	f
+bits_clr	libc/bit-support.h	/^bits_clr(uint32_t x, unsigned lb, unsigned ub) {$/;"	f
+bits_diff	libc/bit-support.h	/^bits_diff(uint32_t A, uint32_t B) {$/;"	f
+bits_eq	libc/bit-support.h	/^bits_eq(uint32_t x, unsigned lb, unsigned ub, uint32_t val) {$/;"	f
+bits_get	libc/bit-support.h	/^bits_get(uint32_t x, unsigned lb, unsigned ub) {$/;"	f
+bits_intersect	libc/bit-support.h	/^bits_intersect(uint32_t x, uint32_t y) {$/;"	f
+bits_mask	libc/bit-support.h	/^static inline uint32_t bits_mask(unsigned nbits) {$/;"	f
+bits_not	libc/bit-support.h	/^static inline uint32_t bits_not(uint32_t x) {$/;"	f
+bits_set	libc/bit-support.h	/^bits_set(uint32_t x, unsigned lb, unsigned ub, uint32_t v) {$/;"	f
+bits_union	libc/bit-support.h	/^bits_union(uint32_t x, uint32_t y) {$/;"	f
+c_buf	libc/circular.h	/^    volatile cqe_t c_buf[CQ_N];$/;"	m	struct:__anon1
+check_bitfield	libc/helper-macros.h	12;"	d
+check_dev_offsets	libc/helper-macros.h	/^void check_dev_offsets(void) {$/;"	f
+check_off	libc/helper-macros.h	53;"	d
+check_off_static	libc/helper-macros.h	48;"	d
+clean_reboot	staff-src/clean-reboot.c	/^void clean_reboot(void) {$/;"	f
+cnt	libc/Q.h	/^    unsigned cnt;$/;"	m	struct:Q
+cntl	include/uart.h	/^        cntl,$/;"	m	struct:aux_periphs
+counter_enabled	include/rpi-armtimer.h	/^              counter_enabled:1,        \/\/ :9 1 = free running counter enabled.$/;"	m	struct:__anon7
+counter_prescaler	include/rpi-armtimer.h	/^              counter_prescaler:7;      \/\/ 16:23 free running counter prescaler.$/;"	m	struct:__anon7
+cp_asm	include/asm-helpers.h	51;"	d
+cp_asm_get	include/asm-helpers.h	38;"	d
+cp_asm_raw	include/asm-helpers.h	55;"	d
+cp_asm_set	include/asm-helpers.h	16;"	d
+cp_asm_set_raw	include/asm-helpers.h	28;"	d
+cpsr_get	include/rpi-interrupts.h	/^static inline uint32_t cpsr_get(void) {$/;"	f
+cpsr_set	include/rpi-interrupts.h	/^static inline void cpsr_set(uint32_t cpsr) {$/;"	f
+cq_ckpt	libc/circular.h	/^static inline unsigned cq_ckpt(cq_t *c) { return c->tail; }$/;"	f
+cq_empty	libc/circular.h	/^static inline int cq_empty(cq_t *q) { return q->head == q->tail; }$/;"	f
+cq_full	libc/circular.h	/^static inline int cq_full(cq_t *q) { return (q->head+1) % (CQ_N) == q->tail; }$/;"	f
+cq_init	libc/circular.h	/^static inline void cq_init(cq_t *c, unsigned errors_fatal_p) {$/;"	f
+cq_nelem	libc/circular.h	/^static inline unsigned cq_nelem(cq_t *q) { return (q->head - q->tail) % (CQ_N); }$/;"	f
+cq_nspace	libc/circular.h	/^static inline unsigned cq_nspace(cq_t *q) { return (CQ_N-1) - cq_nelem(q); }$/;"	f
+cq_ok	libc/circular.h	/^static inline void cq_ok(cq_t *c) {$/;"	f
+cq_peek	libc/circular.h	/^static inline int cq_peek(cq_t *c, cqe_t *e) {$/;"	f
+cq_peek_n	libc/circular.h	/^static inline int cq_peek_n(cq_t *c, cqe_t *v, unsigned n) {$/;"	f
+cq_pop	libc/circular.h	/^static inline cqe_t cq_pop(cq_t *c) {$/;"	f
+cq_pop32	libc/circular.h	/^static inline uint32_t cq_pop32(cq_t *c) {$/;"	f
+cq_pop32_noblk	libc/circular.h	/^static inline int cq_pop32_noblk(cq_t *c, uint32_t *x) {$/;"	f
+cq_pop_n	libc/circular.h	/^static inline void cq_pop_n(cq_t *c, void *data, unsigned n) {$/;"	f
+cq_pop_n_noblk	libc/circular.h	/^static inline int cq_pop_n_noblk(cq_t *q, void *data, unsigned n) {$/;"	f
+cq_pop_nonblock	libc/circular.h	/^static inline int cq_pop_nonblock(cq_t *c, cqe_t *e) {$/;"	f
+cq_print	libc/circular.h	/^static inline void cq_print(cq_t *c) {$/;"	f
+cq_push	libc/circular.h	/^static inline int cq_push(cq_t *c, cqe_t x) {$/;"	f
+cq_push32	libc/circular.h	/^static inline int cq_push32(cq_t *c, uint32_t x) {$/;"	f
+cq_push_n	libc/circular.h	/^static inline int cq_push_n(cq_t *c, const void *data, unsigned n) {$/;"	f
+cq_restore	libc/circular.h	/^static inline void cq_restore(cq_t *c, unsigned ckpt) { c->tail = ckpt; }$/;"	f
+cq_t	libc/circular.h	/^} cq_t;$/;"	t	typeref:struct:__anon1
+cqe_t	libc/circular.h	/^typedef unsigned char cqe_t;$/;"	t
+crc32_tab	libc/crc.c	/^static uint32_t crc32_tab[] = {$/;"	v	file:
+cycle_cnt_init	include/cycle-count.h	6;"	d
+cycle_cnt_read	include/cycle-count.h	12;"	d
+cycle_per_bit	include/sw-uart.h	/^    uint32_t cycle_per_bit;  \/\/ cycles between each bit.$/;"	m	struct:__anon4
+cycles_to_nanosec	include/rpi-constants.h	45;"	d
+debug	libc/assert.h	10;"	d
+debug	libc/assert.h	13;"	d
+delay_cycles	staff-src/delay-ncycles.c	/^void delay_cycles(unsigned ticks) {$/;"	f
+delay_ms	staff-src/timer.c	/^void delay_ms(unsigned ms) {$/;"	f
+delay_ncycles	include/cycle-util.h	/^static inline unsigned delay_ncycles(unsigned start, unsigned n) {$/;"	f
+delay_sec	staff-src/timer.c	/^void delay_sec(unsigned sec) {$/;"	f
+delay_us	staff-src/timer.c	/^void delay_us(unsigned us) {$/;"	f
+demand	libc/assert.h	51;"	d
+dev_barrier	staff-src/mem-barrier.S	/^dev_barrier:$/;"	l
+disable_cache	staff-src/cache.c	/^void disable_cache(void) {$/;"	f
+dmb	staff-src/mem-barrier.S	/^dmb:$/;"	l
+dsb	staff-src/mem-barrier.S	/^dsb:$/;"	l
+dummy	staff-src/put-get.S	/^dummy:$/;"	l
+echo	include/hc-sr04.h	/^    unsigned trigger, echo;$/;"	m	struct:__anon6
+emit	libc/va-printk.c	/^emit(unsigned base, char *dst, int n, int val, int width, int signed_p) {$/;"	f	file:
+enable_cache	staff-src/cache.c	/^void enable_cache(void) {$/;"	f
+enable_fpu	staff-src/fp-support.S	/^enable_fpu:$/;"	l
+errors_fatal_p	libc/circular.h	/^    unsigned errors_fatal_p:1;$/;"	m	struct:__anon1
+exit_success	libc/assert.h	67;"	d
+fast_hash	libc/hash.c	/^uint32_t fast_hash(const void * _data, uint32_t len) {$/;"	f
+fast_hash_inc	libc/hash.c	/^uint32_t fast_hash_inc(const void * _data, uint32_t len, uint32_t hash) {$/;"	f
+fast_hash_inc32	libc/fast-hash32.h	/^static inline uint32_t fast_hash_inc32(const void * _data, uint32_t len, uint32_t hash) {$/;"	f
+fence	libc/circular.h	/^    unsigned fence;$/;"	m	struct:__anon1
+flush_all_caches	staff-src/cache-flush.S	/^flush_all_caches:$/;"	l
+fp_get_frac	libc/va-printk.c	/^static unsigned fp_get_frac(double d) {$/;"	f	file:
+fp_get_integral	libc/va-printk.c	/^static long fp_get_integral(double d) {$/;"	f	file:
+fp_is_enabled	staff-src/fp-support.S	/^fp_is_enabled: .word 1$/;"	l
+gcc_mb	include/rpi.h	286;"	d
+get16bits	libc/fast-hash32.h	10;"	d
+get16bits	libc/fast-hash32.h	14;"	d
+get16bits	libc/fast-hash32.h	7;"	d
+get16bits	libc/hash.c	11;"	d	file:
+get16bits	libc/hash.c	4;"	d	file:
+get16bits	libc/hash.c	7;"	d	file:
+get32	staff-start.S	/^get32:$/;"	l
+get32_T	libc/helper-macros.h	131;"	d
+gpio_clr0	src/gpio.c	/^static const unsigned gpio_clr0  = (GPIO_BASE + 0x28);$/;"	v	file:
+gpio_fsel0	src/gpio.c	/^static const unsigned gpio_fsel0 = (GPIO_BASE + 0x00);$/;"	v	file:
+gpio_func_t	include/gpio.h	/^} gpio_func_t;$/;"	t	typeref:enum:__anon2
+gpio_lev0	src/gpio.c	/^static const unsigned gpio_lev0  = (GPIO_BASE + 0x34);$/;"	v	file:
+gpio_read	src/gpio.c	/^int gpio_read(unsigned pin) {$/;"	f
+gpio_set0	src/gpio.c	/^static const unsigned gpio_set0  = (GPIO_BASE + 0x1C);$/;"	v	file:
+gpio_set_function	src/gpio.c	/^void gpio_set_function(unsigned pin, gpio_func_t function) {$/;"	f
+gpio_set_input	src/gpio.c	/^void gpio_set_input(unsigned pin) {$/;"	f
+gpio_set_off	src/gpio.c	/^void gpio_set_off(unsigned pin) {$/;"	f
+gpio_set_on	src/gpio.c	/^void gpio_set_on(unsigned pin) {$/;"	f
+gpio_set_output	src/gpio.c	/^void gpio_set_output(unsigned pin) {$/;"	f
+gpio_write	src/gpio.c	/^void gpio_write(unsigned pin, unsigned v) {$/;"	f
+hc_sr04_t	include/hc-sr04.h	/^} hc_sr04_t;$/;"	t	typeref:struct:__anon6
+head	libc/Q.h	/^    E *head, *tail;$/;"	m	struct:Q
+head	libc/circular.h	/^    volatile unsigned head, tail;$/;"	m	struct:__anon1
+ier	include/uart.h	/^        ier,$/;"	m	struct:aux_periphs
+iir	include/uart.h	/^        iir,$/;"	m	struct:aux_periphs
+initial_seed	libc/rpi-rand.c	6;"	d	file:
+int_enabled	include/rpi-armtimer.h	/^              int_enabled:1,            \/\/ :5 1 = timer interrupt enabled$/;"	m	struct:__anon7
+int_is_enabled	include/rpi-interrupts.h	/^static inline int int_is_enabled(void) {$/;"	f
+int_is_enabled	libc/circular.h	14;"	d
+internal_putchar	libc/putchar.c	/^static int internal_putchar(int c) { uart_putc(c); return c; }$/;"	f	file:
+internal_putk	libc/putk.c	/^int internal_putk(const char *p) {$/;"	f
+io	include/uart.h	/^        io,     \/\/ p11$/;"	m	struct:aux_periphs
+is_aligned	libc/helper-macros.h	6;"	d
+is_aligned_ptr	libc/helper-macros.h	7;"	d
+isdigit	libc/va-printk.c	/^static int isdigit(int c) { return c >= '0' && c <= '9'; }$/;"	f	file:
+lcr	include/uart.h	/^        lcr,$/;"	m	struct:aux_periphs
+lfsr	libc/rpi-rand.c	/^static unsigned short lfsr = initial_seed;$/;"	v	file:
+likely	include/rpi.h	297;"	d
+lsr	include/uart.h	/^        lsr,$/;"	m	struct:aux_periphs
+m4add	staff-src/fp-support.S	/^m4add:$/;"	l
+m4add	staff-start.S	/^m4add:$/;"	l
+m4add2	staff-src/fp-support.S	/^m4add2:$/;"	l
+m4add2	staff-start.S	/^m4add2:$/;"	l
+m4vmov	staff-src/fp-support.S	/^m4vmov:$/;"	l
+m4vmov	staff-start.S	/^m4vmov:$/;"	l
+main	libc/va-printk.c	/^int main() { $/;"	f
+mb	include/rpi.h	155;"	d
+mcr	include/uart.h	/^        mcr,$/;"	m	struct:aux_periphs
+memchr	libc/memchr.c	/^void * memchr(const void *s, int c, size_t n) {$/;"	f
+memcmp	libc/memcmp.c	/^int memcmp(const void *_s1, const void *_s2, size_t nbytes) {$/;"	f
+memcpy	libc/memcpy.c	/^void *memcpy(void *dst, const void *src, size_t nbytes) { $/;"	f
+memiszero	libc/memiszero.c	/^int memiszero(const void *_p, unsigned n) {$/;"	f
+memmove	libc/memmove.c	/^void *memmove(void *dst, const void *src, size_t count) {$/;"	f
+memset	libc/memset.c	/^void *memset(void *_p, int c, size_t n) {$/;"	f
+msr	include/uart.h	/^        msr,$/;"	m	struct:aux_periphs
+not_reached	libc/assert.h	65;"	d
+notmain	tests/hello.c	/^void notmain(void) {$/;"	f
+our_crc32	libc/crc.c	/^uint32_t our_crc32(const void *buf, unsigned size) {$/;"	f
+our_crc32_inc	libc/crc.c	/^uint32_t our_crc32_inc(const void *buf, unsigned size, uint32_t crc) {$/;"	f
+output	libc/assert.h	16;"	d
+overflow	libc/circular.h	/^    volatile unsigned overflow;$/;"	m	struct:__anon1
+pad	libc/va-printk.c	/^static char* pad(char *p,  char *base, int width) {$/;"	f	file:
+panic	libc/assert.h	18;"	d
+panic	staff-src/panic.c	/^void (panic)(const char *file, int lineno, const char *msg) {$/;"	f
+pi_roundup	libc/helper-macros.h	9;"	d
+prefetch_flush	include/asm-helpers.h	/^static inline void prefetch_flush(void) {$/;"	f
+prefetch_flush	include/rpi-asm.h	24;"	d
+prescaler	include/rpi-armtimer.h	/^              prescaler:2,          \/\/ 2:3 pre-scale bits$/;"	m	struct:__anon7
+print_field	libc/helper-macros.h	33;"	d
+printk	libc/circular.h	9;"	d
+printk	libc/printk.c	/^int printk(const char *fmt, ...) {$/;"	f
+put16	staff-src/put-get.S	/^put16:$/;"	l
+put32	staff-start.S	/^put32:$/;"	l
+put32_T	libc/helper-macros.h	125;"	d
+put8	staff-src/put-get.S	/^put8:$/;"	l
+putk	libc/putk.c	/^int (*putk)(const char *p) = internal_putk;$/;"	v
+reverse	libc/va-printk.c	/^static char* reverse(char *dst, int n, char *p, char *start) {$/;"	f	file:
+rpi_arm_timer_ctrl_t	include/rpi-armtimer.h	/^} rpi_arm_timer_ctrl_t;$/;"	t	typeref:struct:__anon7
+rpi_arm_timer_t	include/rpi-armtimer.h	/^} rpi_arm_timer_t;$/;"	t	typeref:enum:__anon8
+rpi_putchar	libc/putchar.c	/^int (*rpi_putchar)(int c) = internal_putchar;$/;"	v
+rpi_rand16	libc/rpi-rand.c	/^unsigned short rpi_rand16(void) {$/;"	f
+rpi_rand32	libc/rpi-rand.c	/^unsigned long rpi_rand32(void) {$/;"	f
+rpi_reboot	staff-src/reboot.c	/^void rpi_reboot(void) {$/;"	f
+rpi_reset	libc/rpi-rand.c	/^void rpi_reset(unsigned seed) {$/;"	f
+rpi_reset_putc	libc/putchar.c	/^void rpi_reset_putc(void) {$/;"	f
+rpi_set_output	libc/va-printk.c	/^void rpi_set_output(int (*putc_fp)(int), int (*puts_fp)(const char *)) {$/;"	f
+rpi_set_putc	libc/putchar.c	/^void rpi_set_putc(int (*fp)(int)) {$/;"	f
+rx	include/sw-uart.h	/^    uint8_t tx,rx;$/;"	m	struct:__anon4
+scratch	include/uart.h	/^        scratch,$/;"	m	struct:aux_periphs
+set_user_level	staff-src/reboot.c	/^void set_user_level(void) {$/;"	f
+snprintk	libc/snprintk.c	/^int snprintk(char *buf, size_t n, const char *fmt, ...) {$/;"	f
+stat	include/uart.h	/^        stat,$/;"	m	struct:aux_periphs
+strcat	libc/strcat.c	/^char *strcat (char *dest, const char *src) {$/;"	f
+strchr	libc/strchr.c	/^char *strchr(register const char *s, int c) {$/;"	f
+strcmp	libc/strcmp.c	/^int strcmp(const char *a, const char *b) {$/;"	f
+strcpy	libc/strcpy.c	/^char *strcpy(char * s1, const char * s2) {$/;"	f
+strlen	libc/strlen.c	/^size_t strlen(const char *p) {$/;"	f
+strncmp	libc/strncmp.c	/^int strncmp(const char* _s1, const char* _s2, size_t n) {$/;"	f
+sw_uart_init	include/sw-uart.h	29;"	d
+sw_uart_t	include/sw-uart.h	/^} sw_uart_t;$/;"	t	typeref:struct:__anon4
+tail	libc/Q.h	/^    E *head, *tail;$/;"	m	struct:Q
+tail	libc/circular.h	/^    volatile unsigned head, tail;$/;"	m	struct:__anon1
+timer_enabled	include/rpi-armtimer.h	/^              timer_enabled:1,          \/\/ :7 1 = timer enabled$/;"	m	struct:__anon7
+timer_get_usec	staff-src/timer.c	/^unsigned timer_get_usec(void) {$/;"	f
+timer_get_usec_raw	staff-src/timer.c	/^unsigned timer_get_usec_raw(void) {$/;"	f
+trace	libc/assert.h	24;"	d
+trace_clean_exit	libc/assert.h	32;"	d
+trace_notreached	libc/assert.h	25;"	d
+trace_panic	libc/assert.h	27;"	d
+trigger	include/hc-sr04.h	/^    unsigned trigger, echo;$/;"	m	struct:__anon6
+trunc	libc/va-printk.c	/^static long trunc(double d) {$/;"	f	file:
+tx	include/sw-uart.h	/^    uint8_t tx,rx;$/;"	m	struct:__anon4
+u32_to_T	libc/helper-macros.h	74;"	d
+u8_to_T	libc/helper-macros.h	94;"	d
+uart_can_getc	src/uart.c	/^static int uart_can_getc(void) {$/;"	f	file:
+uart_can_putc	src/uart.c	/^int uart_can_putc(void) {$/;"	f
+uart_disable	src/uart.c	/^void uart_disable(void) {$/;"	f
+uart_flush_tx	src/uart.c	/^void uart_flush_tx(void) {$/;"	f
+uart_get	include/uart.h	/^static inline struct aux_periphs *uart_get(void) { return (void*)0x20215040; }$/;"	f
+uart_getc	src/uart.c	/^int uart_getc(void) {$/;"	f
+uart_getc_async	src/uart.c	/^int uart_getc_async(void) { $/;"	f
+uart_has_data	src/uart.c	/^int uart_has_data(void) {$/;"	f
+uart_hex	libc/uart-hex.c	/^int uart_hex(unsigned h) {$/;"	f
+uart_init	src/uart.c	/^void uart_init(void) {$/;"	f
+uart_putc	src/uart.c	/^void uart_putc(unsigned c) {$/;"	f
+uart_tx_is_empty	src/uart.c	/^int uart_tx_is_empty(void) {$/;"	f
+uint32_t	include/rpi-armtimer.h	/^    uint32_t  :1,                       \/\/ :0 not used.  r\/w$/;"	m	struct:__anon7
+unimplemented	libc/assert.h	64;"	d
+unlikely	include/rpi.h	298;"	d
+use_32bit_counter	include/rpi-armtimer.h	/^              use_32bit_counter:1,     \/\/ :1 1=use 32-bit counter, 0=16-bit$/;"	m	struct:__anon7
+usec_per_bit	include/sw-uart.h	/^    uint32_t usec_per_bit;   \/\/ microseconds b\/n each bit.$/;"	m	struct:__anon4
+usec_to_cycles	include/rpi-constants.h	48;"	d
+user_level	staff-src/reboot.c	/^static unsigned user_level = 0b10000;$/;"	v	file:
+va_printk	libc/va-printk.c	/^int va_printk(char *buf, int n, const char *fmt, va_list args) {$/;"	f
+valid_pin	src/gpio.c	/^int valid_pin(unsigned pin) {$/;"	f
+wait_until_cyc	include/cycle-util.h	/^wait_until_cyc(unsigned pin, unsigned v, unsigned s, unsigned ncycles) {$/;"	f
+wait_until_usec	include/cycle-util.h	/^static inline int wait_until_usec(int pin, int v, unsigned timeout_usec) {$/;"	f
+write_cyc_until	include/cycle-util.h	/^write_cyc_until(unsigned pin, unsigned v, unsigned start, unsigned ncycles) {$/;"	f
+zero	libc/helper-macros.h	70;"	d
