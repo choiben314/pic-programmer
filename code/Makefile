@@ -1,4 +1,4 @@
-SUPPORT_OBJS := #debug-fault.o
+SUPPORT_OBJS := jtag.o #debug-fault.o
 
 # comment this out to use your code
 # USE_STAFF=1
@@ -29,7 +29,7 @@ GREP_STR := 'TRACE:\|THREAD:\|ERROR:\|PANIC:'
 
 # CAN_EMIT = 1
 
-include $(CS140E_2022_PATH)/libpi/mk/Makefile.template
+include ../libpi/mk/Makefile.template
 
 # override the default rules.  should have a cleaner solution
 2-brkpt-test.elf:  2-brkpt-test.o $(DEPS) $(START) $(LIBS)

@@ -1,5 +1,5 @@
 #include "jtag.h"
-
+#include "libc/bit-support.h"
 
 void configure_io(void) {
     gpio_set_output(MCLR);
@@ -37,8 +37,29 @@ void enter_programming_mode(void) {
     // delay 10ms
     // read Xfer data again
 // Done.
+
 static void clock_in(void);
 static void send_nbits(unsigned pin, unsigned val, unsigned n);
+
+
+void read_device_status(void) {
+    uint32_t statusVal;
+    
+    printk("Setting mode.\n");
+    set_mode(0b011111);
+    printk("Sending MTAP_SW_MTAP command.\n");
+    send_command(MTAP_SW_MTAP);
+    printk("Sending MTAP_COMMAND command.\n");
+    send_command(MTAP_COMMAND);
+
+    printk("About to read device status.\n");
+
+    do {
+        statusVal = xfer_data(MCHP_STATUS);
+    } while((!bit_isset(statusVal, CFGRDY)) && bit_isset(statusVal, FCBUSY));
+
+    printk("Checked device status! Status: %b\n", statusVal);
+}
 
 void set_mode(uint8_t mode){
     gpio_set_off(TDI); // TDI set to 0
@@ -85,6 +106,8 @@ uint32_t xfer_data(uint32_t data) {
 
     // TMS Footer 0b10
     send_nbits(TMS, 0b10, 2);
+
+    return in_data;
 }
 
 

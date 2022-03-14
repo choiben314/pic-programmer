@@ -11,6 +11,12 @@
 #define TDO 13 // pin 18 on PIC
 #define TMS 19 // pin 22 on PIC
 
+#define MTAP_SW_MTAP 0x04
+#define MTAP_COMMAND 0x07
+#define MCHP_STATUS 0x00
+#define CFGRDY 3
+# define FCBUSY 2
+
 #define KEY_SEQ 0b01001101010000110100100001010000
 
 void configure_io(void);
