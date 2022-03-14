@@ -22,3 +22,19 @@
     // delay 10ms
     // read Xfer data again
 // Done.
+
+void set_mode(uint8_t mode){
+    gpio_set_off(TDI); // TDI set to 0
+    for(uint8_t i=0; i < 6; i++){
+        gpio_set_on(TCK);
+        // set TMS to i-th bit of mode
+        if(mode >> i & 0b1){
+            gpio_set_on(TMS);
+        }else{
+            gpio_set_off(TMS);
+        }
+        delay_us(TCK_DELAY);
+        gpio_set_off(TCK);
+        delay_us(TCK_DELAY);
+    }
+}
