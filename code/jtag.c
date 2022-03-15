@@ -5,10 +5,13 @@ void configure_io(void) {
     gpio_set_output(MCLR);
     gpio_set_output(TCK);
     gpio_set_output(TDI);
+    gpio_set_output(TMS);
     gpio_set_input(TDO);
+    gpio_pud_off(TDO);
     gpio_set_off(MCLR);
     gpio_set_off(TCK);
     gpio_set_off(TDI);
+    gpio_set_off(TMS);
 }
 
 // Enter enhanced ICSP
@@ -48,15 +51,17 @@ void read_device_status(void) {
     printk("Setting mode.\n");
     set_mode(0b011111);
     printk("Sending MTAP_SW_MTAP command.\n");
-    send_command(MTAP_SW_MTAP);
+    send_command(MTAP_SW_MTAP); // 0b00100
+    set_mode(0b011111);
     printk("Sending MTAP_COMMAND command.\n");
-    send_command(MTAP_COMMAND);
+    send_command(MTAP_COMMAND); // 0b00111
 
     printk("About to read device status.\n");
 
     do {
         statusVal = xfer_data(MCHP_STATUS);
-    } while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY));
+        delay_us(TCK_DELAY);
+    } while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY)); // bit 2 needs to be 1 and bit 3 (CFGRDY) needs to be 0
 
     printk("Checked device status! Status: %b\n", statusVal);
 }
@@ -71,7 +76,7 @@ void send_command(uint8_t cmd){
     // send TMS header = 1, 1, 0, 0 to select shift IR state
     send_nbits(TMS, 0b0011, 4);
 
-    // clock in the 5-bit command
+    // clock in the 5-bit command LSB-first
     gpio_set_off(TMS); // hold TMS low
     for(uint8_t i=0; i < 5; i++){
         if(i == 4){
@@ -92,13 +97,13 @@ uint32_t xfer_data(uint32_t data) {
 
     uint32_t in_data = 0;
 
-    // bits 31:0
+    // bits 30:0
     for (unsigned i = 0; i < XFER_WIDTH - 1; i++) {
         gpio_write(TDI, (data >> i) & 1);
         in_data |= (gpio_read(TDO) << i);
         clock_in();
     }
-    // bit 32 + TMS = 1
+    // bit 31 + TMS = 1
     gpio_set_on(TMS);
     gpio_write(TDI, (data >> (XFER_WIDTH - 1)) & 1);
     in_data |= (gpio_read(TDO) << (XFER_WIDTH - 1));
@@ -107,6 +112,7 @@ uint32_t xfer_data(uint32_t data) {
     // TMS Footer 1, 0
     send_nbits(TMS, 0b01, 2);
 
+    printk("in_data:%b\r\n", in_data);
     return in_data;
 }
 

@@ -4,7 +4,7 @@
 #define LO_TIME 50
 #define XFER_WIDTH 32
 
-#define TCK_DELAY 1 // delay time in us 
+#define TCK_DELAY 10 // delay time in us 
 #define MCLR 26 // pin 1 on PIC
 #define TDI 5 // pin 16 on PIC
 #define TCK 6 // pin 17 on PIC
