@@ -85,6 +85,36 @@ Thus, we decided to switch gears and try implementing a 2-wire 4-phase programme
 ### Looking Forward
 **Loading Program Executive**
 
+The program executive (PE) is code downloaded onto RAM that receives and loads the program into device flash memory.
+
+According to Section 11.0 in PIC32MX Flash Programming Specification, loading the PE onto RAM consists of two steps:
+
+1. Loading the PE Loader onto RAM. This loads the PE binary into the correct location on RAM and then jumps to it.
+2. Actually providing the PE Loader with the PE binary once the loader is in place.
+
+The PE hex file can be found on the Microchip website. Detailed instructions for loading the PE into device RAM can be found in Section 11.0 of PIC32MX Flash Programming Specification.
+
+**Downloading a Data Block**
+
+Once the PE is loaded into RAM, the actual program must be downloaded onto the device. Once the PE is loaded, block-wise programming occurs trivially via the following commands.
+
+`XferFastData(PROGRAM|DATA_SIZE)` \
+`XferFastData(ADDRESS)` \
+`XferFastData(32'h0x0)`
+
+The PE then immediately writes the program to flash memory from RAM automatically.
+
+**Verify Device Memory**
+
+The program can then be verified once it has been downloaded to ensure that all data was programmed correctly. This is completed through calculation of checksums, as shown below.
+
+`XferFastData(GET_CRC)` \
+`XferFastData(START_ADDRESS)` \
+`XferFastData(LENGTH)` \
+`valCkSum = XferFastData(32'h0x0)`
+
+MCLR may then be asserted to exit programming mode and begin program execution.
+
 ## Useful Resources
 - [PIC32MX Flash Programing Specification](http://ww1.microchip.com/downloads/en/devicedoc/61145g.pdf)
     - most useful resource by far
