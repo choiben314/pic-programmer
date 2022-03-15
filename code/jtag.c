@@ -49,19 +49,24 @@ void read_device_status(void) {
     uint32_t statusVal;
     
     printk("Setting mode.\n");
+    delay_us(300);
     set_mode(0b011111);
+    delay_us(300);
     printk("Sending MTAP_SW_MTAP command.\n");
     send_command(MTAP_SW_MTAP); // 0b00100
+    delay_us(300);
     set_mode(0b011111);
+    delay_us(300);
     printk("Sending MTAP_COMMAND command.\n");
     send_command(MTAP_COMMAND); // 0b00111
+    delay_us(300);
 
     printk("About to read device status.\n");
 
     do {
         statusVal = xfer_data(MCHP_STATUS);
-        delay_us(TCK_DELAY);
-    } while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY)); // bit 2 needs to be 1 and bit 3 (CFGRDY) needs to be 0
+        delay_us(1000);
+    } while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY)); // bit 2 (FCBUSY) needs to be 0 and bit 3 (CFGRDY) needs to be 1
 
     printk("Checked device status! Status: %b\n", statusVal);
 }
@@ -73,6 +78,7 @@ void set_mode(uint8_t mode){
 }
 
 void send_command(uint8_t cmd){
+    gpio_set_off(TCK);
     // send TMS header = 1, 1, 0, 0 to select shift IR state
     send_nbits(TMS, 0b0011, 4);
 
@@ -125,6 +131,7 @@ static void send_nbits(unsigned pin, unsigned val, unsigned n) {
 }
 
 static void clock_in(void){
+    delay_us(TCK_DELAY);
     gpio_set_on(TCK);
     delay_us(TCK_DELAY);
     gpio_set_off(TCK);
