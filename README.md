@@ -68,6 +68,8 @@ Therefore, we decided to verify against the closest thing to a working 4-wire JT
 
 **Switch to 2-wire 4-phase ICSP**
 
+Thus, we decided to switch gears and try implementing a 2-wire 4-phase programmer similar to the SNAP that we could compare against. To do so, we had to modify our pseudoinstructions and helper functions to multiplex values of TDI, TMS, and TDO according to *Figure 5*.
+
 ### Looking Forward
 **Loading Program Executive**
 
