@@ -14,6 +14,7 @@
 #define MTAP_SW_MTAP 0x04
 #define MTAP_COMMAND 0x07
 #define MCHP_STATUS 0x00
+#define MCHP_ERASE 0xFC
 #define CFGRDY 3
 #define FCBUSY 2
 
@@ -31,3 +32,5 @@ void set_mode(uint8_t mode);
 void send_command(uint8_t cmd);
 
 uint32_t xfer_data(uint32_t data);
+
+void erase_device(void);
