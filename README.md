@@ -1,4 +1,4 @@
-# CS140E Final Project: PIC32 ICSP Programmer on the Raspberry Pi A+
+# CS140E Final Project: PIC32 JTAG and ICSP Programmers on the Raspberry Pi A+
 ## khuang and choiben214
 
 ### Github Repo:
