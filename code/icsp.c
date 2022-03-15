@@ -144,6 +144,50 @@ uint32_t xfer_data(uint32_t data) {
     // TMS Footer
     rw_multi(0, 0b01, 2);
 
-    printk("data:%b\r\n", data);
+    // printk("data:%b\r\n", data);
     return data;
+}
+
+void erase_device(void) {
+    uint32_t statusVal = 0;
+
+    send_command(MTAP_SW_MTAP);
+    send_command(MTAP_COMMAND);
+
+    printk("About to chip erase.\n");
+    xfer_data(MCHP_ERASE);
+    
+    delay_ms(90);
+
+    do {
+        statusVal = xfer_data(MCHP_STATUS);
+        delay_us(1);
+    } while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY)); // bit 2 (FCBUSY) needs to be 0 and bit 3 (CFGRDY) needs to be 1
+
+    printk("Chip erase complete! Status: %b\n", statusVal);
+}
+
+void enter_serial_execution_mode(void) {
+    uint32_t statusVal = 0;
+
+    send_command(MTAP_SW_MTAP);
+    send_command(MTAP_COMMAND);
+
+    statusVal = xfer_data(MCHP_STATUS);
+
+    // Checking CPS is set
+    printk("Checking CPS is set. Status: %b\n", statusVal);
+    assert(bit_isset(statusVal, CPS));
+
+    // printk("About to chip erase.\n");
+    // xfer_data(MCHP_ERASE);
+    
+    // delay_ms(90);
+
+    // do {
+    //     statusVal = xfer_data(MCHP_STATUS);
+    //     delay_ms(10);
+    // } while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY)); // bit 2 (FCBUSY) needs to be 0 and bit 3 (CFGRDY) needs to be 1
+
+    // printk("Chip erase complete! Status: %b\n", statusVal);
 }
