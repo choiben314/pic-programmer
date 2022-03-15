@@ -20,6 +20,11 @@
 #define CFGRDY 3
 #define FCBUSY 2
 #define CPS 1
+#define PRACC 18
+
+#define ETAP_CONTROL 0x0A
+#define ETAP_DATA 0x09
+#define ETAP_FASTDATA 0x0E
 
 #define KEY_SEQ 0b01001101010000110100100001010000
 
@@ -39,3 +44,9 @@ uint32_t xfer_data(uint32_t data);
 void erase_device(void);
 
 void enter_serial_execution_mode(void);
+
+void xfer_instruction(uint32_t ins);
+
+uint32_t xfer_fast_data(uint32_t data);
+
+void download_pe(void);
