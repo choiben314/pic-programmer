@@ -145,8 +145,21 @@ void erase_device(void){
     uint32_t statusVal;
     do{
         statusVal = xfer_data(MCHP_STATUS);
-        delay_us(1000);
+        delay_ms(1);
     }while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY)); // FCBUSY (bit 2) must be 0 and CFGRDY (bit 3) must be 1
 
     printk("Erased device! Current Device Status: %b\n", statusVal);
+}
+
+void enter_serial_execution_mode(void){
+    send_command(MTAP_SW_MTAP);
+    send_command(MTAP_COMMAND);
+    uint32_t statusVal = xfer_data(MCHP_STATUS);
+    if(!bit_isset(statusVal, CPS)){
+        printk("Device must be erased first.\r\n");
+        return;
+    }
+    send_command(MTAP_SW_ETAP);
+    send_command(ETAG_EJTAGBOOT);
+    gpio_set_on(MCLR);
 }
