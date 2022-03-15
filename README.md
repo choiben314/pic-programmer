@@ -22,15 +22,15 @@ Connect pins as follows for 4-wire JTAG:
 - TDO: gpio13 on Pi pin 18 on PIC
 - TMS: gpio19 on Pi to pin 22 on PIC
 
-![4wirehw](./pics/4wire_hw.png)
-*Figure 1. 4-Wire Hardware Setup*
+![4wirehw](./pics/4wire_hardware.heic)
+*Figure 1. 4-Wire Hardware Setup with Arduino ArduPIC32 Setup Unconnected*
 
 Connect pins as follows for 2-wire ICSP:
 - MCLR: gpio26 on Pi to pin 1 on PIC
 - PGD: gpio5 on Pi to pin 4 on PIC
 - PGC: gpio6 on Pi to pin 5 on PIC
 
-![2wirehw](./pics/2wire_hardware.png)
+![2wirehw](./pics/2wire_hardware.heic)
 *Figure 2. 2-Wire Hardware Setup*
 
 ## Process and Challenges
