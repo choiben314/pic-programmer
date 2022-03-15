@@ -12,11 +12,18 @@ We created an external programming tool to load programs on to the PIC32 using t
 
 We worked with the PIC32 in a mechatronics course (ME218B) using an external programming tool (SNAP) and wanted to learn the inner-workings of the programming tool and how it actually loads programs on to the PIC. We also wanted to explore JTAG and ICSP programming.
 
-## Challenges
+## Process and Challenges
+Upon reviewing the PIC32 Flash Programming Specification, we realized there are 3 main ways we could write an external programmer for the PIC32: 4-wire Enhanced JTAG (EJTAG), 2-wire ICSP with two-phase multiplexing, and 2-wire ICSP with four-phase multiplexing.
 
-### What We Tried?
+### What We Tried
+**4-wire JTAG attempt**
 
-### What's Left?
+We first decided to 
+
+**Switch to 2-wire 4-phase ICSP**
+
+### Looking Forward
+**Loading Program Executive**
 
 ## Useful Resources
 - [PIC32MX Flash Programing Specification](http://ww1.microchip.com/downloads/en/devicedoc/61145g.pdf)
@@ -24,9 +31,8 @@ We worked with the PIC32 in a mechatronics course (ME218B) using an external pro
     - contains useful instructions, block diagrams, and timing diagrams describing how to put PIC32 into programming mode and load programming executive and actual program code
 - [Arduino ICSP Programmer Repo for PIC16](https://github.com/jaromir-sukuba/a-p-prog)
     - similar project to ours but there are many differences between PIC16 family and PIC32 family
-- [PIC32MX Section 5: Flash Programming Documentation](https://ww1.microchip.com/downloads/en/DeviceDoc/60001121g.pdf
+- [PIC32MX Section 5: Flash Programming Documentation](https://ww1.microchip.com/downloads/en/DeviceDoc/60001121g.pdf)
     - more general overview of flash programming than first link
-)
 - [PIC32 Programming and Diagnostics](https://ww1.microchip.com/downloads/en/DeviceDoc/61129F.pdf
 )
 - [PIC32 Family Datasheet](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/PIC32MX1XX2XX283644-PIN_Datasheet_DS60001168L.pdf
