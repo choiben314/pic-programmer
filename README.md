@@ -63,19 +63,19 @@ Next, with the logic analyzer we verified that `statusVal` variable in software 
 *Figure 6* below shows the overall check device status waveform on the logic analyzer and *Figures 7-10* show the specific waveforms for each pseudoinstruction step in checking device status that we verified has the same values in software. *Figure 10* shows the `XferData` command in which TDO was not getting the correct values for bits `FCBUSY` and `CFGRDY`. 
 
 ![overall](./pics/logic_4wire_overall.png)
-*Figure 6. Overall 4-wire Logic Analyzer Waveform*
+*Figure 6. Overall 4-wire Check Device Status Logic Analyzer Waveform*
 
 ![set_mode](./pics/logic_4wire_setmode.png)
-*Figure 7. SetMode Instruction Logic Analyzer Waveform*
+*Figure 7. 4-Wire SetMode Instruction Logic Analyzer Waveform*
 
 ![mtap_sw_mtap](./pics/logic_4wire_mtap_sw_mtap.png)
-*Figure 8. SendCommand(MTAP_SW_MTAP) Logic Analyzer Waveform*
+*Figure 8. 4-Wire SendCommand(MTAP_SW_MTAP) Logic Analyzer Waveform*
 
 ![mtap_command](./pics/logic_4wire_mtap_command.png)
-*Figure 9. SendCommand(MTAP_COMMAND) Logic Analyzer Waveform*
+*Figure 9. 4-Wire SendCommand(MTAP_COMMAND) Logic Analyzer Waveform*
 
 ![mchp_status](./pics/logic_4wire_mchp_status.png)
-*Figure 10. XferData(MCHP_STATUS) Logic Analyzer Waveform*
+*Figure 10. 4-Wire XferData(MCHP_STATUS) Logic Analyzer Waveform*
 
 Next, we attempted to compare our `statusVal` to that of a working implementation of a PIC32 programmer. Unfortunately, we did not have a JTAG programmer to verify with and only the 2-wire ICSP SNAP programmer. We connected the SNAP programmer and loaded a random program. We manually reviewed the programming sequence at the beginning of loading the program using the logic analyzer again. However, because the SNAP uses a 2-wire ICSP SNAP programmer we had to manually demultiplex the values of PGD. Because there are two possible multiplexing options for the 2-wire ICSP implementation, we had to determine whether it was using 2-phase or 4-phase multiplexing by comparing the very first set_mode command we saw to what we expected from the Flash Programming Specification datasheet. We, then determined that PGD was using a 4-phase demultiplexing scheme where TDI and TMS are written on the falling edge of the first two clock cycles and TDO is read on the rising edge of the fourth clock cycle in the 4-phases (pictured in *Figure 11*).
 
