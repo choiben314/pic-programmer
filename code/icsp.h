@@ -11,16 +11,27 @@
 
 #define MTAP_SW_MTAP 0x04
 #define MTAP_SW_ETAP 0x05
-#define ETAP_EJTAGBOOT 0x0C
 #define MTAP_COMMAND 0x07
+
+#define ETAP_EJTAGBOOT 0x0C
+#define ETAP_CONTROL 0x0A
+#define ETAP_DATA 0x09
+#define ETAP_FASTDATA 0x0E
+
 #define MCHP_STATUS 0x00
 #define MCHP_ERASE 0xFC
 #define MCHP_ASSERT_RST 0xD1
 #define MCHP_DE_ASSERT_RST 0xD0
 #define MCHP_EN_FLASH 0xFE
+
 #define CFGRDY 3
 #define FCBUSY 2
 #define CPS 7
+#define PRACC 18
+
+#define PE_ADDRESS 0x0
+#define PE_SIZE 0
+#define PE_OPCODE 0
 
 #define KEY_SEQ 0b01001101010000110100100001010000
 
@@ -46,3 +57,11 @@ uint32_t xfer_data(uint32_t data);
 void erase_device(void);
 
 void enter_serial_execution_mode(void);
+
+void xfer_instruction(uint32_t ins);
+
+uint32_t xfer_fast_data(uint32_t data);
+
+void download_pe(void);
+
+void exit_programming_mode(void);
