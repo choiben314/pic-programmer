@@ -1,5 +1,5 @@
 #include "rpi.h"
-#include "jtag.h"
+#include "icsp.h"
 
 void notmain(void) {
     configure_io();

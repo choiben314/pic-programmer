@@ -1,4 +1,4 @@
-SUPPORT_OBJS := jtag.o #debug-fault.o
+SUPPORT_OBJS := icsp.o #jtag.o #debug-fault.o
 
 # comment this out to use your code
 # USE_STAFF=1
