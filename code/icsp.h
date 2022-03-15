@@ -10,9 +10,14 @@
 #define PGC 6 // pin 17 on PIC
 
 #define MTAP_SW_MTAP 0x04
+#define MTAP_SW_ETAP 0x05
+#define ETAP_EJTAGBOOT 0x0C
 #define MTAP_COMMAND 0x07
 #define MCHP_STATUS 0x00
 #define MCHP_ERASE 0xFC
+#define MCHP_ASSERT_RST 0xD1
+#define MCHP_DE_ASSERT_RST 0xD0
+#define MCHP_EN_FLASH 0xFE
 #define CFGRDY 3
 #define FCBUSY 2
 #define CPS 7

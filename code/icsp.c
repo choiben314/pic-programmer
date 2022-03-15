@@ -168,6 +168,9 @@ void erase_device(void) {
 }
 
 void enter_serial_execution_mode(void) {
+
+    printk("Entering serial execution mode.\n");
+
     uint32_t statusVal = 0;
 
     send_command(MTAP_SW_MTAP);
@@ -179,15 +182,15 @@ void enter_serial_execution_mode(void) {
     printk("Checking CPS is set. Status: %b\n", statusVal);
     assert(bit_isset(statusVal, CPS));
 
-    // printk("About to chip erase.\n");
-    // xfer_data(MCHP_ERASE);
-    
-    // delay_ms(90);
+    xfer_data(MCHP_ASSERT_RST);
 
-    // do {
-    //     statusVal = xfer_data(MCHP_STATUS);
-    //     delay_ms(10);
-    // } while(!bit_isset(statusVal, CFGRDY) || bit_isset(statusVal, FCBUSY)); // bit 2 (FCBUSY) needs to be 0 and bit 3 (CFGRDY) needs to be 1
+    send_command(MTAP_SW_ETAP);
+    send_command(ETAP_EJTAGBOOT);
+    send_command(MTAP_SW_MTAP);
+    send_command(MTAP_COMMAND);
 
-    // printk("Chip erase complete! Status: %b\n", statusVal);
+    xfer_data(MCHP_DE_ASSERT_RST);    
+    xfer_data(MCHP_EN_FLASH);
+
+    printk("Entered serial execution mode.\n");
 }
