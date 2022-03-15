@@ -62,7 +62,7 @@ After implementing these initial pseudoinstructions we were able to implement re
 
 Upon implementing this, we saw that device status was never correctly set with the correct values for `FCBUSY` and `CFGRDY` bits. 
 
-To debug this, we tried a number of steps incuding verifying hardware, software debugging, and checking signals with a logic analyzer. The first issue we found was that we needed to ensure both pullup and pulldown pins were disabled for the input pin TDO. 
+To debug this, we tried a number of steps incuding verifying hardware, software debugging, and checking signals with a logic analyzer. The first issue we found was that we needed to ensure both pullup and pulldown pins were disabled for the input pin TDO. Another major issue we discovered was setting appropriate setup and hold time delays before clocking in TDI/TMS or reading TDO.
 
 Next, with the logic analyzer we verified that `statusVal` variable in software was correctly getting the values of the input TDO pin from hardware. We verified these values matched with a logic analyzer; however, the values were just never getting correctly set to indicate the device status was ready. 
 
