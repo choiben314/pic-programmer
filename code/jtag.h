@@ -12,10 +12,14 @@
 #define TMS 19 // pin 22 on PIC
 
 #define MTAP_SW_MTAP 0x04
+#define MTAP_SW_ETAP 0x05
+#define ETAG_EJTAGBOOT 0x0C
 #define MTAP_COMMAND 0x07
 #define MCHP_STATUS 0x00
+#define MCHP_ERASE 0xFC
 #define CFGRDY 3
 #define FCBUSY 2
+#define CPS 1
 
 #define KEY_SEQ 0b01001101010000110100100001010000
 
@@ -31,3 +35,7 @@ void set_mode(uint8_t mode);
 void send_command(uint8_t cmd);
 
 uint32_t xfer_data(uint32_t data);
+
+void erase_device(void);
+
+void enter_serial_execution_mode(void);
