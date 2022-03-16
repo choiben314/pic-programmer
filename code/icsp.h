@@ -6,8 +6,8 @@
 
 #define TCK_DELAY 10 // delay time in us 
 #define MCLR 26 // pin 1 on PIC
-#define PGD 5 // pin 16 on PIC
-#define PGC 6 // pin 17 on PIC
+#define PGD 5 // pin 4 on PIC
+#define PGC 6 // pin 5 on PIC
 
 #define MTAP_SW_MTAP 0x04
 #define MTAP_SW_ETAP 0x05
